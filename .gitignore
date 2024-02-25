@@ -1,0 +1,15 @@
+# Compiled Python files
+*.pyc
+__pycache__/
+
+# Ignore lib folders
+lib*/
+lib64*
+pyvenv.cfg*
+Scripts*/
+bin*/
+include*/
+Lib/
+
+# Ignore Visual Studio Code settings
+.vscode/

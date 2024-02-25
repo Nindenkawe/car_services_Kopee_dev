@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>KOPEE</title>
+    <!-- Mobile Specific Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <!-- Font-->
+    <link rel="stylesheet" type="text/css" href="" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href=""
+    />
+    <!-- Jquery -->
+    <link
+      rel="stylesheet"
+      href="https://jqueryvalidation.org/files/demo/site-demos.css"
+    />
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="static/style.css" />
+  </head>
+  <body class="form-v4">
+    <div class="page-content">
+      <div class="form-v4-content">
+        <div class="form-left">
+          <h2>Welcom to KOPEE! </h2>
+          <h4 class="text-1">
+            Roadside Assistance simplified
+          </h4>
+          <p class="text-2">
+            Taking care of your car just got Simpler, Faster & way more Efficient. Everything your car needs, Just a click away.
+          </p>
+          <div class="form-left-last">
+            <input
+              type="submit"
+              class="account"
+              value=" Make a call "
+            />
+            
+          </div>
+        </div>
+        <form class="form-detail" action='https://crm.zoho.com/crm/WebToLeadForm' name=WebToLeads6060399000000500003 method='POST'
+		onSubmit='javascript:document.charset="UTF-8"; return checkMandatory6060399000000500003()'
+		accept-charset='UTF-8'>
+		<input type='text' style='display:none;' name='xnQsjsdp'
+		value='44349fc5d2e141b0c83561fe0edbe940e5ebb6807c11b56a8e7ad73190780e14'></input>
+
+	<input type='hidden' name='zc_gad' id='zc_gad' value=''></input>
+
+	<input type='text' style='display:none;' name='xmIwtLD'
+		value='615c828500fb9412f7fb422fae4d0f63e8cd7fc4d5b2c73ae5160ae49f66a28161d0f9e5cce0ac156d3802a24ecf897a'></input>
+
+	<input type='text' style='display:none;' name='actionType' value='TGVhZHM='></input>
+
+	<input type='text' style='display:none;' name='returnURL'
+		value='https&#x3a;&#x2f;&#x2f;ckm4gjdk-8000.uks1.devtunnels.ms&#x2f;car_services&#x2f;home&#x23;third'>
+	</input>
+    <h2>Get instant help </h2>
+        <div class="form-group">
+        <div class="form-row">
+            <label for="first_name">Name</label>
+            <input
+            type="text"
+            name="Last Name"
+            id="Last Name"
+            class="input-text"
+            />
+        </div>
+        </div>
+
+        <div class="form-row">
+        <label for="service">Service</label>
+        <select class="input-text" id="service" name="service" required>
+            <option value="-None-">-None-</option>
+            <option value="Towing Services">Towing Services</option>
+            <option value="Roadside Assistance">Roadside Assistance</option>
+            <option value="Vehicle Jump-Start Services">
+            Vehicle Jump-Start Services
+            </option>
+            <option value="Minor Repairs">Minor Repairs</option>
+            <option value="Emergency Fuel Delivery">
+            Emergency Fuel Delivery
+            </option>
+        </select>
+        </div>
+
+        <div class="form-row">
+        <label for="your_PhoneNumber">Your Phone number </label>
+        <input
+            type="text"
+            name="Phone"
+            id="Phone"
+            class="input-text"
+            required
+        />
+        </div>
+
+        <div class="form-group"></div>
+        <div class="form-checkbox">
+        <label class="container"
+            ><p>
+            I agree to the <a href="#" class="text">Terms and Conditions</a>
+            </p>
+            <input type="checkbox" name="checkbox" />
+            <span class="checkmark"></span>
+        </label>
+        </div>
+        <div class="form-row-last">
+                <input type='submit' id='formsubmit' class="register" value='Request'title='Submit'>
+                <input type='reset' name='reset' class="register"value='clear' title='Clear'>
+        </div>
+    </form>
+      </div>
+    </div>
+<script>
+  function checkMandatory6060399000000500003() {
+  var mndFileds = new Array("Last Name", "Phone", "LEADCF2");
+
+  var fldLangVal = new Array("Name", "Phone", "car\x20services");
+
+  for (i = 0; i < mndFileds.length; i++) {
+      var fieldObj =
+      document.forms["WebToLeads6060399000000500003"][mndFileds[i]];
+
+      if (fieldObj) {
+      if (fieldObj.value.replace(/^\s+|\s+$/g, "").length == 0) {
+          if (fieldObj.type == "file") {
+          alert("Please select a file to upload.");
+
+          fieldObj.focus();
+
+          return false;
+          }
+
+          alert(fldLangVal[i] + " cannot be empty.");
+
+          fieldObj.focus();
+
+          return false;
+      } else if (fieldObj.nodeName == "SELECT") {
+          if (fieldObj.options[fieldObj.selectedIndex].value == "-None-") {
+          alert(fldLangVal[i] + " cannot be none.");
+
+          fieldObj.focus();
+
+          return false;
+          }
+      } else if (fieldObj.type == "checkbox") {
+          if (fieldObj.checked == false) {
+          alert("Please accept  " + fldLangVal[i]);
+
+          fieldObj.focus();
+
+          return false;
+          }
+      }
+
+      try {
+          if (fieldObj.name == "Last Name") {
+          name = fieldObj.value;
+          }
+      } catch (e) {}
+      }
+  }
+
+  var urlparams = new URLSearchParams(window.location.search);
+
+  if (
+      urlparams.has("service") &&
+      urlparams.get("service") === "smarturl"
+  ) {
+      var webform = document.getElementById("webform");
+
+      var service = urlparams.get("service");
+
+      var smarturlfield = document.createElement("input");
+
+      smarturlfield.setAttribute("type", "hidden");
+
+      smarturlfield.setAttribute("value", service);
+
+      smarturlfield.setAttribute("name", "service");
+
+      webform.appendChild(smarturlfield);
+  }
+
+  document
+      .querySelector(".crmWebToEntityForm .formsubmit")
+      .setAttribute("disabled", true);
+  }
+
+  function tooltipShow6060399000000500003(el) {
+  var tooltip = el.nextElementSibling;
+
+  var tooltipDisplay = tooltip.style.display;
+
+  if (tooltipDisplay == "none") {
+      var allTooltip = document.getElementsByClassName("zcwf_tooltip_over");
+
+      for (i = 0; i < allTooltip.length; i++) {
+      allTooltip[i].style.display = "none";
+      }
+
+      tooltip.style.display = "block";
+  } else {
+      tooltip.style.display = "none";
+  }
+  }
+</script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+</body>
+</html>
