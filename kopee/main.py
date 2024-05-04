@@ -10,7 +10,10 @@ import aiohttp
 kopee = FastAPI()
 
 # Mount the "static" directory to serve static files
-kopee.mount("/static", StaticFiles(directory="static"), name="static")
+def jls_extract_def():
+    return "static"
+# Mount the "static" directory to serve static files
+kopee.mount("/kopee/static", StaticFiles(directory=jls_extract_def()), name="static")
 
 # Mount the "templates" directory to serve HTML templates
 templates = Jinja2Templates(directory="templates")
@@ -56,7 +59,7 @@ class DataHandler:
                 payeeNote="Payment for car servicing",
                 externalId=f"{subscriber_id}_{car_id}_{service_type}_{service_date}_{service_time}",
                 amount="100",
-                currency="USD",
+                currency="EUR",
                 payer=Payer(
                     partyIdType="MSISDN",
                     partyId="0700000000",
@@ -68,6 +71,11 @@ class DataHandler:
             make_payment(payment_request)
 
         return templates.TemplateResponse("car_services.html", {"request": request})
+
+
+@kopee.get("/")
+async def render_car_servicing_form(request: Request):
+    return templates.TemplateResponse("home.html", {"request": request})
 
 
 @kopee.get("/request_car_servicing")

@@ -1,0 +1,107 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #FCFFF7;
+  --secondary-color: #4DA167;
+  --complimentary-color: #BFD7EA;
+  --contrast-color: #FE9920;
+  --light-color: #071013;
+}
+
+.container {
+  background: #FCFFF7;
+  min-height: 100vh;
+  font-family: Montserrat, sans-serif;
+}
+
+nav a {
+  font-size: 40px;
+  color: #071013;
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--secondary-color);
+}
+
+section {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 0;
+  opacity: 0;
+  transition: all ease-in 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section h1 {
+  color: #1c0303;
+  font-size: 50px;
+  text-transform: uppercase;
+  opacity: 0;
+}
+
+/* Styles applied on trigger */
+section:target {
+  opacity: 1;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+section:target h1 {
+  opacity: 0;
+  animation: 2s fadeIn forwards 0.5s;
+}
+
+#kopee {
+  background: var(--primary-color);
+}
+#available_services {
+  background: var(--complimentary-color);
+}
+
+#service_forms {
+  background: var(--contrast-color);
+}
+
+#call {
+  background: var(--light-color);
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.logo {
+    position: fixed;
+    top: 10px;
+    left: 0px; /* Adjust this value according to your layout */
+    width: 50px;
+    height: 50px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
