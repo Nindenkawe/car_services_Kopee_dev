@@ -20,4 +20,4 @@ EXPOSE 7000
 # USER non-root-user  # Replace with a non-root user if applicable
 
 # Run the FastAPI app using a more robust command format
-CMD ["cd kopee""uvicorn", "--host", "0.0.0.0", "--port", "7000", "main:kopee"]
+CMD ["cd kopee","uvicorn", "--host", "0.0.0.0", "--port", "7000", "main:kopee"]
